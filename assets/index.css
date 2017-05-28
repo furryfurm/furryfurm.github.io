@@ -1,0 +1,400 @@
+/* 
+==========================================
+Reset Code
+==========================================
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*
+==========================================
+Main
+==========================================
+*/
+
+
+/*
+==========================================
+Sets html and body to full height (setup for footer)
+==========================================
+*/
+
+html, body {
+	font-size: 1em;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background-color: #e8e8e8;
+	margin: 0;
+	height: 100%;
+}
+
+/*
+==========================================
+Fixed Navigation bar
+==========================================
+*/
+
+.navbar {
+	z-index: 1; /*puts on top of stack order*/
+	width: 100%;
+	position: fixed;
+	overflow: hidden;
+	background-color: #333;
+	
+}
+
+.navbar li {
+	float: left; /*allows side by side display of links*/
+	
+}
+.navbar li a {
+	display: block;
+	color: white;
+	font-size: 1.2em;
+	text-align: center;
+	padding: 20px;
+	text-decoration: none;
+	transition: background-color 0.5s ease-in-out;
+}
+
+.navbar li a:hover {
+	background-color: #9e9e9e; /*changes color on hover*/
+}
+
+.active {
+	height: 100%;
+	background-color: #0056c1; /*shows active tab in a different color*/
+}
+
+/*
+==========================================
+Main Content and Balloon Setup w/ Responsive Layout
+==========================================
+*/
+
+.content {
+	min-height: 125%; /*sets a min height so footer doesn't go to top w/o content*/
+	margin-bottom: -50px; /*equal to height of footer*/
+}
+
+.balloon {
+	float: left;
+	box-sizing: border-box;
+	position: relative;
+	margin-right: 2.5%;
+	margin-left: 2.5%;
+	padding: 25px;
+	border-radius: 15px;
+}
+
+#main {
+	top: 75px;
+	margin-bottom: 75px; /*offsets from footer*/
+	font-size: 1.2em;
+	background-color: #ffffff;
+	width: 69.375%;
+}
+
+/*for screens less than 1000px, expand the main balloon to max width*/
+@media only screen and (max-width: 1000px){
+    #main {
+        width: 95%;
+    }
+}
+
+/*for screens less than 1000px, hide the sidebar*/
+@media only screen and (max-width: 1000px){
+    #sidebar, #profilepic, #aboutside, #mediabuttons, #buttonleft, #buttonright {
+        visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 0;
+		width: 0;
+		
+    }
+}
+
+/*
+==========================================
+Picture Containers
+==========================================
+*/
+
+img.contentpic {
+	/*the first 2 lines prevent pictures escaping from container*/
+	max-height: 100%; 
+	max-width: 100%;
+}
+
+.landscape {
+	max-width: 65%;
+	padding: 10px;
+	margin-top: 30px;
+	border: 6px dashed #000000;
+	border-radius: 20px;
+	background-color: white;
+}
+
+/*
+==========================================
+Responsive Gallery (thanks W3C)
+==========================================
+*/
+
+div.gallery {
+    border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+    border: 1px dashed #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+	font-size: .8em;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*for screens bigger than 700px, show four pictures per row*/
+.responsive {
+    padding: 6px 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+/*for screens less than 700px, only show two pictures per row*/
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+/*for screens less than 500px, only show one picture per row*/
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+
+
+
+/*
+==========================================
+Text styling
+==========================================
+*/
+
+h1 {
+	font-size: 2.25em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+#aboutside h5 {
+	font-size: 1.3em;
+	font-style: italic;
+	text-align: center;
+	
+	
+}
+
+#aboutside p {
+	font-size: 0.9em;
+	font-style: italic;
+	text-align: center;
+}
+
+a {
+	text-decoration: none; /*removes underline from links*/
+}
+
+div {
+	line-height: 110%;
+}
+
+/*LINK styling DO NOT CHANGE ORDER*/
+
+a:link {
+	color: blue;
+	transition: color .5s ease-in-out;
+}
+
+a:visited {
+	color: #a851ff;
+}
+
+a:hover {
+	color: #3fc8ff;
+}
+
+a:active {
+	color: #bc0000;
+	transition: none;
+}
+
+.quote {
+	display: inline-block;
+	font-style: italic;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	padding: 8px;
+	border-left: 5px solid red;
+	background-color: #ffbcbc;
+}
+
+/*  
+==========================================
+Sidebar styling
+==========================================
+*/
+
+#sidebar {
+	top: 125px;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 15px;
+	border: 3px dashed #949599;
+	width: 23.125%;
+}
+
+#profilepic {
+
+	box-sizing: border-block;
+	display: block;
+	height: 80px;
+	width: 80px;
+	margin: auto;
+	border-radius: 50%;
+	filter: grayscale(100%);
+	transition: filter 0.5s ease-in-out;
+}
+
+#profilepic:hover {
+	filter: grayscale(0%);
+}
+
+#aboutside {
+	position: relative;
+	top: 10px;
+	padding-top: 10px;
+	border-top: 3px dashed #4c4c4c;
+	
+}
+
+#mediabuttons {
+	text-align: center;
+	margin: auto;
+	float: left;
+	width: 100%;
+	padding: 7% 10% 0 10%; /*no padding on bottom*/
+
+}
+
+#mediabuttons img {
+	margin-left: auto;
+	margin-right: auto;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	filter: grayscale(100%);
+	transition: filter 0.5s ease-in-out;
+}
+
+#mediabuttons img:hover {
+	filter: grayscale(0%);
+}
+
+#buttonleft {
+	float: left;
+}
+
+#buttonright {
+	float: right;
+}
+
+/*
+==========================================
+Footer
+==========================================
+*/
+
+.push {
+	clear: both;
+	height: 75px; /*slightly offsets content and footer*/
+}
+
+.site-footer {
+	height: 50px;
+	clear: both;
+	width: 100%;
+	background-color: #262626;
+}
+	
+.site-footer p {
+	color: white;
+	padding: 16px;
+}
+	
+	
+	
+	
+	
